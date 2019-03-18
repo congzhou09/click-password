@@ -1,7 +1,8 @@
 {
   "name": "ClickPassword",
   "version": "1.0.0",
-  "description": "Hide the vConsole at first, and show it after some special clicks.",
+  "homepage": "",
+  "description": "set up a quadrant in viewport, click in 4 ranges of quadrant to generate a password ,and then to trigger something",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +10,9 @@
   "author": "Congzhou09",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
     "webpack": "^4.29.6"
   }
 }
