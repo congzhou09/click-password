@@ -21,9 +21,9 @@ Download or install via npm (npm install click-password)
 ```
 import ClickPassword from 'click-password';
 
-// 初始化，指定预设序列(如'ABADA'，或其他由A、B、C、D组成的序列)和回调函数
+// init click-password with pre-set sequence(like 'ABADA' or other sequence composed of A, B, C, D) and callback function
 new ClickPassword('ABADA', ()=>{
-  //回调函数，预设的处理过程
+  //Callback, Do Something
 });
 ```
 
