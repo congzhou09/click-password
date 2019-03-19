@@ -7,7 +7,7 @@ module.exports = {
     entry: Path.resolve(__dirname, "./index.js"),
     output: {
         path: Path.resolve(__dirname, "./dist"),
-        filename: "click-password.min.js"
+        filename: "click-password-" + pkg.version + ".min.js"
     },
     module: {
         rules: [
@@ -19,9 +19,9 @@ module.exports = {
     },
     plugins: [
         new Webpack.BannerPlugin([
-            'click_password v' + pkg.version + ' (' + pkg.homepage + ')',
+            'click-password v' + pkg.version + ' (' + pkg.homepage + ')',
             '',
-            'Copyright (C) 2019. Free to use, very pleased to mention my name: "Congzhou"~ ',
+            'Copyright (C) 2019. Free to use, very pleased to reserve my name: "Congzhou" ',
         ].join('\n'))
     ]
 };

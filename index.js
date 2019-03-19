@@ -11,11 +11,11 @@ const ClickPassword = (function(){
             this.clickSequenceArray = [];//实际点击password存储Array
             this.eventHandler = null;
             this.init();
-            console.info(`ClickPassword info: config OK!`);
+            console.info(`click-password info: config OK!`);
         }
         else
         {
-            console.warn(`ClickPassword warn: invalid triggerSequence or triggerSequence`);
+            console.warn(`click-password warn: invalid triggerSequence or triggerSequence`);
         }
 
     }
@@ -60,7 +60,7 @@ const ClickPassword = (function(){
         }
         else
         {
-            console.warn(`ClickPassword warn: event attach failed, no 'addEventListener'`);
+            console.warn(`click-password warn: event attach failed, no 'addEventListener'`);
         }
     };
 
@@ -77,7 +77,7 @@ const ClickPassword = (function(){
             if(this.eventHandler)
             {
                 document.removeEventListener('click', this.eventHandler);
-                console.info(`ClickPassword info: config OK!`);
+                console.info(`click-password info: trigger successfully, config removed OK!`);
             }
         }
     };
