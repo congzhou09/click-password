@@ -35,8 +35,11 @@ new ClickPassword('ABADA', ()=>{
 </script>
 ```
 
+### 小贴士
 ●初始化成功后，浏览器控制台将打印消息“click-password info: config OK!”。
+
 ●无须从页面载入后的第一次点击开始，只要点击过程出现了预设序列即可触发回调。
+
 ●回调只触发一次，除非重新载入页面。
 
 ### 注意
@@ -44,4 +47,5 @@ new ClickPassword('ABADA', ()=>{
 
 ### 应用举例
 生产环境下，通过点击'ACABD'序列调出vConsole（移动端调试工具）
-![](./snapshot/trigger_vconsole.gif)
+
+![](https://raw.githubusercontent.com/congzhou09/click-password/HEAD/snapshot/trigger_vconsole.gif)

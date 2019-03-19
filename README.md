@@ -39,6 +39,7 @@ Or import via script element:
 </script>
 ```
 
+### tips
 ●Browser console will print "click-password info: config OK!" after click-password's initialization.
 
 ●Callback will be executed as long as pre-set sequence is clicked, match the pre-set sequence from the first click is not necessary.

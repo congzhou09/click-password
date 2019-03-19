@@ -1,6 +1,6 @@
 {
   "name": "click-password",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/congzhou09/click-password.git",
   "description": "set up a quadrant in viewport, click in 4 ranges of quadrant to generate a password ,and then to trigger something",
   "main": "index.js",
