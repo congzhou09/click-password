@@ -1,4 +1,4 @@
-[English](./README.md)
+[English](./README_EN.md)
 
 ### 目的
 将浏览器视口按照如下顺序分为A、B、C、D四个象限,
