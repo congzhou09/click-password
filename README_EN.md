@@ -2,11 +2,11 @@
 ### what for
 Set up a quadrant in viewport, name of each range is as follows:
 ```
-         │
+        │
     A   │   B
-───────
+──────────────────
     C   │   D
-         │
+        │
 ```
 after that, clicks in each range can generate a sequence, use this sequence as a password.
 If this sequence match the pre-set sequence, pre-set function will be executed.
