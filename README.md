@@ -39,6 +39,14 @@ Or import via script element:
 </script>
 ```
 
-Browser console will print "click-password info: config OK!" after click-password's initialization.
+●Browser console will print "click-password info: config OK!" after click-password's initialization.
+●Callback will be executed as long as pre-set sequence is clicked, match the pre-set sequence from the first click is not necessary.
+●Callback will be executed only once, only if the web page is reloaded.
 
+### attention
+When use 'click-password' in mobile device, REMEBER to process 300ms delay (one common way is to use 'fast-click') that disturbs click event.
 
+### example
+Click 'ACABD' to trigger the show of vConsole(developer tool for mobile web page) in production environment.
+
+![](https://raw.githubusercontent.com/click-password/HEAD/snapshot/trigger_vconsole.gif)

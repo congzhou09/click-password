@@ -49,7 +49,7 @@ const ClickPassword = (function(){
     };
 
     ClickPassword.prototype.eventProcess = function(e){
-        console.log(this.getQuadrant({x: e.clientX, y:e.clientY}));
+        // console.log(this.getQuadrant({x: e.clientX, y:e.clientY}));
         this.checkClick(this.getQuadrant({x: e.clientX, y:e.clientY}));
     }
     ClickPassword.prototype.init = function(){
