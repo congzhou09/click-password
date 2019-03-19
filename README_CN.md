@@ -1,4 +1,4 @@
-[![npm version]]
+[![npm version](https://badge.fury.io/js/click-password.svg)](https://badge.fury.io/js/click-password)
 
 ### 目的
 将浏览器视口按照如下顺序分为A、B、C、D四个象限,
