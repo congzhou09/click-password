@@ -17,7 +17,7 @@ If this sequence match the pre-set sequence, pre-set function will be executed.
 
 ### usage
 
-Download or install via npm (npm install click-password)
+Download or install via npm (__npm install click-password__)
 ```
 import ClickPassword from 'click-password';
 
