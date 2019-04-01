@@ -15,7 +15,7 @@
 
 ### 使用
 
-下载或通过npm（npm install click-password）安装，
+下载或通过npm（__npm install click-password__）安装，
 ```
 import ClickPassword from 'click-password';
 
