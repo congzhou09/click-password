@@ -26,7 +26,7 @@ new ClickPassword('ABADA', ()=>{
 ```
 或者通过script标签引入，
 ```
-<script src="path/to/click-password-version.min.js"></script>
+<script src="path/to/click-password.min.js"></script>
 <script>
   // 初始化，指定预设序列(如'ABADA'，或其他由A、B、C、D组成的序列)和回调函数
   new ClickPassword('ABADA', ()=>{

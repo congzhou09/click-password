@@ -30,7 +30,7 @@ new ClickPassword('ABADA', ()=>{
 Or import via script element:
 
 ```
-<script src="path/to/click-password-version.min.js"></script>
+<script src="path/to/click-password.min.js"></script>
 <script>
   // init click-password with pre-set sequence(like 'ABADA' or other sequence composed of A, B, C, D) and callback function
   new ClickPassword('ABADA', ()=>{

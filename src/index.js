@@ -1,4 +1,5 @@
 const ClickPassword = (function(){
+    'use strict';
     function ClickPassword(triggerSequence, triggerCallback){
         if(typeof(triggerSequence)==='string'&&triggerSequence.length&&!triggerSequence.match(/[^[ABCD]/)
             &&(typeof(triggerCallback)==='function'||typeof(triggerCallback)==='undefined'))
@@ -67,18 +68,25 @@ const ClickPassword = (function(){
     ClickPassword.prototype.checkClick = function(oneClickChar){
         this.clickSequenceArray.push(oneClickChar);
         let curClickSequence = this.clickSequenceArray.join('');
-        if(curClickSequence.length>0&& curClickSequence.match(new RegExp(`${this.triggerSequence}`)))
+        if(new RegExp(`^${curClickSequence}`).exec(this.triggerSequence))
         {
-            if(this.triggerCallback)
+            if(curClickSequence.length === this.triggerSequence.length)
             {
-                this.triggerCallback();
+                if(this.triggerCallback)
+                {
+                    this.triggerCallback();
+                }
+                this.clickSequenceArray.length = 0;
+                if(this.eventHandler)
+                {
+                    document.removeEventListener('click', this.eventHandler);
+                    console.info("click-password info: trigger successfully, config removed OK!");
+                }
             }
+        }
+        else
+        {
             this.clickSequenceArray.length = 0;
-            if(this.eventHandler)
-            {
-                document.removeEventListener('click', this.eventHandler);
-                console.info(`click-password info: trigger successfully, config removed OK!`);
-            }
         }
     };
 

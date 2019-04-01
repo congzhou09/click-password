@@ -4,10 +4,12 @@ var Path = require('path');
 
 module.exports = {
     mode: "production",
-    entry: Path.resolve(__dirname, "./index.js"),
+    entry: Path.resolve(__dirname, "./src/index.js"),
     output: {
         path: Path.resolve(__dirname, "./dist"),
-        filename: "click-password-" + pkg.version + ".min.js"
+        filename: "click-password.min.js",
+        library: 'ClickPassword',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [
