@@ -48,4 +48,4 @@ new ClickPassword('ABADA', ()=>{
 ### 应用举例
 生产环境下，通过点击'ACABD'序列调出vConsole（移动端调试工具）
 
-![](https://raw.githubusercontent.com/congzhou09/click-password/HEAD/snapshot/trigger_vconsole.gif)
+![实例动图](https://congzhou09.github.io/click-password/snapshot/trigger_vconsole.gif)
