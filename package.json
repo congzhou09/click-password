@@ -8,10 +8,11 @@
     "password"
   ],
   "description": "set up a quadrant in viewport, click in 4 ranges of quadrant to generate a password ,and then to trigger something",
-  "main": "dist/click-password.min.js",
+  "browser": "dist/click-password.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "codecheck": "eslint --ext .js --fix src"
+    "codecheck": "eslint --ext .js --fix src",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "yuancongzhou",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.1.1",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.12"
   }
 }
