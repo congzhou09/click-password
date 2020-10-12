@@ -80,6 +80,4 @@ const ClickPassword = (function () {
   return ClickPassword;
 })();
 
-if (typeof module === 'object' && module.exports) {
-  module.exports = ClickPassword;
-}
+export default ClickPassword;

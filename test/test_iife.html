@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../dist/click-password.min.js"></script>
+    <title>click-password test</title>
+    <style>
+      html {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      press "CCDDA" sequence and see Console output
+    </p>
+    <script>
+      new ClickPassword('CCDDA', () => {
+        console.log('OK');
+      });
+    </script>
+  </body>
+</html>
