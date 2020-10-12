@@ -52,4 +52,4 @@ When use 'click-password' in mobile device, REMEBER to process 300ms delay (one 
 ### example
 Click 'ACABD' to trigger the show of vConsole(developer tool for mobile web page) in production environment.
 
-![](https://raw.githubusercontent.com/congzhou09/click-password/HEAD/snapshot/trigger_vconsole.gif)
+![example gif image](https://congzhou09.github.io/click-password/snapshot/trigger_vconsole.gif)
