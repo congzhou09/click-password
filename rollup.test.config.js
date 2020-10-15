@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 export default {
   input: 'test/js/test.js',
   output: {
+    name: 'clickTest',
     file: 'test/js/test-bundle.js',
     format: 'iife'
   },
