@@ -6,13 +6,13 @@
 function ClickPassword(triggerSequence, triggerCallback) {
   if (
     typeof triggerSequence === 'string' &&
-    triggerSequence.length &&
-    !triggerSequence.match(/[^[ABCD]/) &&
+    triggerSequence.length > 0 &&
+    !triggerSequence.match(/[^ABCD]/) &&
     (typeof triggerCallback === 'function' || typeof triggerCallback === 'undefined')
   ) {
     this.rangeWidth = document.documentElement.clientWidth;
     this.rangeHeight = document.documentElement.clientHeight;
-    this.triggerSequence = triggerSequence;
+    this.triggerSequence = triggerSequence ?? '';
     this.triggerCallback = triggerCallback;
 
     this.clickSequenceArray = []; // 实际点击password存储Array
@@ -59,20 +59,20 @@ ClickPassword.prototype.init = function () {
 ClickPassword.prototype.checkClick = function (oneClickChar) {
   this.clickSequenceArray.push(oneClickChar);
   const curClickSequence = this.clickSequenceArray.join('');
-  if (new RegExp(`^${curClickSequence}`).exec(this.triggerSequence)) {
-    if (curClickSequence.length === this.triggerSequence.length) {
-      if (this.triggerCallback) {
-        this.triggerCallback();
-      }
-      this.clickSequenceArray.length = 0;
-      if (this.eventHandler) {
-        document.removeEventListener('click', this.eventHandler);
-        console.info('click-password info: trigger successfully, config removed OK!');
-      }
+  if (new RegExp(`${this.triggerSequence}`).exec(curClickSequence)) {
+    if (this.triggerCallback) {
+      this.triggerCallback();
+    }
+    this.clickSequenceArray.length = 0;
+    if (this.eventHandler) {
+      document.removeEventListener('click', this.eventHandler);
+      console.info('click-password info: trigger successfully, config removed OK!');
     }
   } else {
-    this.clickSequenceArray.length = 0;
+    this.clickSequenceArray = this.clickSequenceArray.slice(-this.triggerSequence.length);
   }
+
+  // console.log(this.clickSequenceArray);
 };
 
 export default ClickPassword;

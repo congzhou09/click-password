@@ -19,7 +19,7 @@ var clickTest = (function () {
 
 	var clickPassword_min = createCommonjsModule(function (module, exports) {
 	  /**
-	   * click-password v1.1.1 (https://github.com/congzhou09/click-password.git)
+	   * click-password v1.1.2 (https://github.com/congzhou09/click-password.git)
 	   * 
 	   * Copyright (C) 2019. Free to use, very pleased to reserve my name: "Congzhou" 
 	   */
@@ -28,7 +28,7 @@ var clickTest = (function () {
 	  }(commonjsGlobal, function () {
 
 	    function e(e, t) {
-	      "string" != typeof e || !e.length || e.match(/[^[ABCD]/) || "function" != typeof t && void 0 !== t ? console.warn("click-password warn: invalid triggerSequence or triggerSequence") : (this.rangeWidth = document.documentElement.clientWidth, this.rangeHeight = document.documentElement.clientHeight, this.triggerSequence = e, this.triggerCallback = t, this.clickSequenceArray = [], this.eventHandler = null, this.init(), console.info("click-password info: config OK!"));
+	      "string" == typeof e && e.length > 0 && !e.match(/[^ABCD]/) && ("function" == typeof t || void 0 === t) ? (this.rangeWidth = document.documentElement.clientWidth, this.rangeHeight = document.documentElement.clientHeight, this.triggerSequence = null != e ? e : "", this.triggerCallback = t, this.clickSequenceArray = [], this.eventHandler = null, this.init(), console.info("click-password info: config OK!")) : console.warn("click-password warn: invalid triggerSequence or triggerSequence");
 	    }
 
 	    return e.prototype.getQuadrant = function (e) {
@@ -45,12 +45,12 @@ var clickTest = (function () {
 	    }, e.prototype.checkClick = function (e) {
 	      this.clickSequenceArray.push(e);
 	      var t = this.clickSequenceArray.join("");
-	      new RegExp("^".concat(t)).exec(this.triggerSequence) ? t.length === this.triggerSequence.length && (this.triggerCallback && this.triggerCallback(), this.clickSequenceArray.length = 0, this.eventHandler && (document.removeEventListener("click", this.eventHandler), console.info("click-password info: trigger successfully, config removed OK!"))) : this.clickSequenceArray.length = 0;
+	      new RegExp("".concat(this.triggerSequence)).exec(t) ? (this.triggerCallback && this.triggerCallback(), this.clickSequenceArray.length = 0, this.eventHandler && (document.removeEventListener("click", this.eventHandler), console.info("click-password info: trigger successfully, config removed OK!"))) : this.clickSequenceArray = this.clickSequenceArray.slice(-this.triggerSequence.length);
 	    }, e;
 	  });
 	});
 
-	new clickPassword_min('CCDDA', function () {
+	new clickPassword_min('CBCDDA', function () {
 	  console.log('OK');
 	});
 	var test = {};
