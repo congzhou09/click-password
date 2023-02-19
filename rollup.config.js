@@ -1,6 +1,5 @@
 import babel from '@rollup/plugin-babel';
-import banner from 'rollup-plugin-banner';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import Path from 'path';
 import pkg from './package.json';
 
@@ -9,20 +8,18 @@ export default {
   output: {
     name: 'ClickPassword',
     file: Path.resolve(__dirname, './dist/click-password.min.js'),
-    format: 'umd'
+    format: 'umd',
+    banner: `/** \n * ${pkg.name} v${pkg.version} (${pkg.homepage}) \n */ \n`
   },
   plugins: [
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'inline'
     }),
-    terser(),
-    banner(
-      [
-        'click-password v' + pkg.version + ' (' + pkg.homepage + ')',
-        '',
-        'Copyright (C) 2019. Free to use, very pleased to reserve my name: "Congzhou" '
-      ].join('\n')
-    )
+    terser({
+      format: {
+        comments: RegExp(`${pkg.name}`)
+      }
+    })
   ]
 };
