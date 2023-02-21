@@ -1,4 +1,6 @@
 import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import Path from 'path';
 import pkg from './package.json';
@@ -12,9 +14,11 @@ export default {
     banner: `/** \n * ${pkg.name} v${pkg.version} (${pkg.homepage}) \n */ \n`
   },
   plugins: [
+    resolve(),
+    commonjs(),
     babel({
       exclude: 'node_modules/**',
-      babelHelpers: 'inline'
+      babelHelpers: 'runtime'
     }),
     terser({
       format: {

@@ -43,7 +43,7 @@ var clickTest = (function () {
 
 	// import ClickPassword from '../../dist/click-password.min.js';
 	var ClickPassword = clickPassword_minExports;
-	new ClickPassword('CCDDA', function () {
+	new ClickPassword('CCDDAB', function () {
 	  console.log('OK');
 	});
 

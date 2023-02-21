@@ -14,7 +14,7 @@ export default {
     commonjs(),
     babel({
       exclude: 'node_modules/**',
-      babelHelpers: 'inline'
+      babelHelpers: 'runtime'
     })
   ]
 };
