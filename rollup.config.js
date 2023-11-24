@@ -4,9 +4,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import Path from 'path';
 import pkg from './package.json';
+import typescript from '@rollup/plugin-typescript';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     name: 'ClickPassword',
     file: Path.resolve(__dirname, './dist/click-password.min.js'),
@@ -16,10 +17,11 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    babel({
-      exclude: 'node_modules/**',
-      babelHelpers: 'runtime'
-    }),
+    // babel({
+    //   exclude: 'node_modules/**',
+    //   babelHelpers: 'runtime'
+    // }),
+    typescript(),
     terser({
       format: {
         comments: RegExp(`${pkg.name}`)

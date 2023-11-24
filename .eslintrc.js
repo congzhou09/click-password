@@ -7,5 +7,21 @@ module.exports = {
     es6: true,
     node: true
   },
-  parser: '@babel/eslint-parser'
+  parser: '@babel/eslint-parser',
+  rules: {
+    'require-jsdoc': 'off',
+    'comma-dangle': 'off',
+    'no-unused-vars': 'off'
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      extends: ['plugin:@typescript-eslint/recommended'],
+      plugins: ['@typescript-eslint'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off'
+      }
+    }
+  ]
 };
