@@ -3,6 +3,7 @@ class ClickPassword {
   rangeHeight: number;
   triggerSequence: string;
   triggerCallback: () => void;
+  printDebug = false;
   clickSequenceArray: Array<string>;
   eventName: string = 'mousedown';
   eventHandler: () => void;
@@ -11,18 +12,20 @@ class ClickPassword {
    * ClickPassword constructor
    * @param {string} triggerSequence the sequence string for trigger callback function.
    * @param {function} triggerCallback the callback function.
+   * @param {boolean} printDebug whether print debug logs.
    */
-  constructor(triggerSequence: string, triggerCallback: () => void) {
+  constructor(triggerSequence: string, triggerCallback: () => void, printDebug = false) {
     if (
       typeof triggerSequence === 'string' &&
       triggerSequence.length > 0 &&
       !triggerSequence.match(/[^ABCD]/) &&
       (typeof triggerCallback === 'function' || typeof triggerCallback === 'undefined')
     ) {
-      this.rangeWidth = document.documentElement.clientWidth;
-      this.rangeHeight = document.documentElement.clientHeight;
+      this.rangeWidth = window.innerWidth;
+      this.rangeHeight = window.innerHeight;
       this.triggerSequence = triggerSequence ?? '';
       this.triggerCallback = triggerCallback;
+      this.printDebug = printDebug;
 
       this.clickSequenceArray = []; // to store the clicked sequence
       this.eventHandler = this.eventProcess.bind(this);
@@ -51,8 +54,11 @@ class ClickPassword {
   }
   eventProcess(e: PointerEvent | MouseEvent | TouchEvent) {
     const clientX = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX;
-    const clientY = e instanceof TouchEvent ? e.touches[0].clientX : e.clientY;
-    // console.debug(this.getQuadrant({ x: clientX, y: clientY }));
+    const clientY = e instanceof TouchEvent ? e.touches[0].clientY : e.clientY;
+    if (this.printDebug) {
+      console.debug({ x: clientX, y: clientY });
+      console.debug(this.getQuadrant({ x: clientX, y: clientY }));
+    }
     this.checkClick(this.getQuadrant({ x: clientX, y: clientY }));
   }
   // named from the topLeft corner, A-topLeft B-topRight C-bottomLeft D-bottomRight

@@ -12,7 +12,7 @@ var clickTest = (function () {
 	};
 
 	/** 
-	 * click-password v1.1.2 (https://github.com/congzhou09/click-password.git) 
+	 * click-password v2.0.0 (https://github.com/congzhou09/click-password.git) 
 	 */
 	(function (module, exports) {
 	  !function (e, t) {
@@ -20,8 +20,8 @@ var clickTest = (function () {
 	  }(commonjsGlobal, function () {
 
 	    return function () {
-	      function e(e, t) {
-	        this.eventName = "mousedown", "string" == typeof e && e.length > 0 && !e.match(/[^ABCD]/) && ("function" == typeof t || void 0 === t) ? (this.rangeWidth = document.documentElement.clientWidth, this.rangeHeight = document.documentElement.clientHeight, this.triggerSequence = null != e ? e : "", this.triggerCallback = t, this.clickSequenceArray = [], this.eventHandler = this.eventProcess.bind(this), this.init(), console.debug("click-password info: config OK!")) : console.debug("click-password warn: invalid triggerSequence or triggerSequence");
+	      function e(e, t, n) {
+	        void 0 === n && (n = !1), this.printDebug = !1, this.eventName = "mousedown", "string" == typeof e && e.length > 0 && !e.match(/[^ABCD]/) && ("function" == typeof t || void 0 === t) ? (this.rangeWidth = window.innerWidth, this.rangeHeight = window.innerHeight, this.triggerSequence = null != e ? e : "", this.triggerCallback = t, this.printDebug = n, this.clickSequenceArray = [], this.eventHandler = this.eventProcess.bind(this), this.init(), console.debug("click-password info: config OK!")) : console.debug("click-password warn: invalid triggerSequence or triggerSequence");
 	      }
 	      return e.prototype.getEventName = function () {
 	        "ontouchstart" in window ? this.eventName = "touchstart" : "PointerEvent" in window ? this.eventName = "pointerdown" : this.eventName = "mousedown";
@@ -29,8 +29,14 @@ var clickTest = (function () {
 	        this.getEventName(), document.addEventListener ? document.addEventListener(this.eventName, this.eventHandler) : console.debug("click-password warn: event attach failed, no 'addEventListener'");
 	      }, e.prototype.eventProcess = function (e) {
 	        var t = e instanceof TouchEvent ? e.touches[0].clientX : e.clientX,
-	          n = e instanceof TouchEvent ? e.touches[0].clientX : e.clientY;
-	        this.checkClick(this.getQuadrant({
+	          n = e instanceof TouchEvent ? e.touches[0].clientY : e.clientY;
+	        this.printDebug && (console.debug({
+	          x: t,
+	          y: n
+	        }), console.debug(this.getQuadrant({
+	          x: t,
+	          y: n
+	        }))), this.checkClick(this.getQuadrant({
 	          x: t,
 	          y: n
 	        }));
