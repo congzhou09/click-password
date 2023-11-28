@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <script src="../dist/click-password.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>click-password test</title>
     <style>
-      html {
-        height: 100%;
+      body {
+        height: 300vh;
+        width: 100vw;
       }
     </style>
   </head>
   <body>
-    <p>
-      press "CCDDAB" sequence and see Console output
-    </p>
+    <p>press "CCDDAB" sequence and see Console output</p>
     <script>
-      new ClickPassword('CCDDAB', () => {
-        console.log('OK');
-      });
+      new ClickPassword(
+        'CCDDAB',
+        () => {
+          console.log('OK');
+        },
+        true
+      );
     </script>
   </body>
 </html>
