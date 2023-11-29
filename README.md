@@ -46,11 +46,13 @@ Or import via script element:
 
 ### tips
 
-●Browser console will print "click-password info: config OK!" after click-password's initialization.
+● Browser console will print "click-password info: config OK!" after click-password's initialization.
 
-●Callback will be executed as long as pre-set sequence is clicked, match the pre-set sequence from the first click is not necessary.
+● Callback will be executed as long as pre-set sequence is clicked, match the pre-set sequence from the first click is not necessary.
 
-●Callback will be executed only once, only if the web page is reloaded.
+● Callback will be executed only once, only if the web page is reloaded.
+
+● The declaration file for use with TypeScript is located at "dist/click-password.d.ts".
 
 ### example
 

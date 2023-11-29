@@ -1,4 +1,4 @@
-// import babel from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
@@ -17,11 +17,11 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    // babel({
-    //   exclude: 'node_modules/**',
-    //   babelHelpers: 'runtime'
-    // }),
-    typescript({ compilerOptions: { declaration: true, declarationDir: Path.resolve(__dirname, './dist') } }),
+    typescript({ compilerOptions: { declaration: false } }),
+    babel({
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime'
+    }),
     terser({
       format: {
         comments: RegExp(`${pkg.name}`)

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outFile": "dist/click-password.d.ts",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "target": "es2018",
+    "importsNotUsedAsValues": "remove",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": false
+  },
+  "include": ["./src/**/*"]
+}

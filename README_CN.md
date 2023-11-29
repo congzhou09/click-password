@@ -47,6 +47,8 @@ new ClickPassword('ABADA', ()=>{
 
 ● 回调只触发一次，除非重新载入页面。
 
+● 供 TS 使用的声明文件位于"dist/click-password.d.ts"。
+
 ### 应用举例
 
 生产环境下，通过点击'ACABD'序列调出 vConsole（移动端调试工具）
